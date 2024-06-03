@@ -1,0 +1,35 @@
+<div class="dialog">
+    <h1 mat-dialog-title>Add New Department</h1>
+    <div mat-dialog-content>
+       <div class="form-container">
+            <h5 class="form-title">Add New Department</h5>
+            <div *ngIf="loading">
+              <p>Loading...</p>
+            </div>
+            <div *ngIf="!loading">
+              <form [formGroup]="createDepartmentForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
+        
+   
+                <div class="form-group">
+                    <select id="dropdown" formControlName="departmentName" id="departmentName">
+                            <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+                      </select>
+            
+                    <div *ngIf="createDepartmentForm.get('departmentName')?.hasError('required')" class="form-error">
+                        Please add company department
+                      </div>
+                </div>
+
+                <div style="display: flex; justify-content:space-between;">
+                <button class="btn btn-primary" type="submit" [disabled]="createDepartmentForm.invalid">Save</button>
+                <button class="btn btn-primary" (click)="CloseDialog()">Cancel</button>
+                </div>
+                <div *ngIf="errors" class="form-error">
+                  {{errors}}
+                </div>
+              </form>
+            </div>
+          </div>
+
+    </div>
+</div>

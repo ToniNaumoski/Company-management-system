@@ -1,0 +1,79 @@
+
+<div *ngIf="company; else noData">
+    <div class="company-data">
+        <div class="company-data-wrapper">
+            <div class="company-data-table">
+                
+                <div class="company-data-header">
+                    <p style="cursor: pointer;" routerLink="/home">Back to main</p>
+                </div>
+                <div class="company-data-header">
+                    <h1 class="title">Company Name ({{company.companyName}})</h1>
+                </div>
+                <div class="company-data-header">
+                    <p class="title" style="font-weight: bold;">Company Headquaters ({{company.companyHeadquaters}})</p>
+                </div>
+                <div class="company-data-header">
+                    <p class="title"  style="font-weight: bold;">Company CEO ({{company.companyCeo}})</p>
+                </div>
+                <div class="company-data-header">
+                    <button class="add-department" (click)="OpenAddDepartmentDialog()">Add new department</button>
+                </div>
+                <div class="company-data-header">
+                    <button class="add-department" (click)="OpenAddEmployeeDialog()">Add new employee</button>
+                </div>
+                <div class="filters">
+                    <!-- <div class="serach-filter">
+                        
+                        <input type="text" #searchInput (input)="onInputChange(searchInput.value)" placeholder="Search a role">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </div> -->
+                    <div class="select-filters">
+                        <div class="filter-by-department">
+                            <select id="dropdown" (change)="onDepartmentChange($event)">
+                                <option value="">Select Department</option> 
+                                <option *ngFor="let departments of filterByDepartments" [value]="departments">{{ departments }}</option>
+                          </select>
+                        </div>
+                        <div class="filter-by-employess">
+                            <select id="dropdown1" (change)="onEmployessChange($event)">
+                                <option value="">Select Employee</option> 
+                                <option *ngFor="let employee of filterByEmployess" [value]="employee">{{ employee }}</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-component" role="region" tabindex="0">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Role</th>
+                                <th>Department</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="employess">
+                     
+                                <tr *ngFor="let employee of employess; track employee">
+                                   <th>{{employee.employeeName}}</th>
+                                   <th>{{employee.employeeRoles}}</th>
+                                   <th>{{employee.employeeDepartment}}</th>
+                                   <td><button (click)="OpenEditAddEployeeDialog(employee)">edit</button><button (click)="deleteEmployee(employee.employeeId, employee.companyId)">delete</button></td>
+                                    <!-- {{ company.companyCeo }}
+                                    {{ company.companyHeadquaters }}
+                                    {{ company.companyId }}
+                                    {{ company.companyName }} -->
+                                    </tr>
+                             
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div></div>
+
+<ng-template #noData>
+  <p>No companies qwe.</p>
+</ng-template>
+

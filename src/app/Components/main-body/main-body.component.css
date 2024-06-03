@@ -1,0 +1,24 @@
+.main-body {
+    width: 100%;
+}
+
+.main-body.content {
+    display: flex;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #3182ce; /* bg-blue-500 */
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  

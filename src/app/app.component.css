@@ -1,0 +1,34 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-body {
+    width: 100%;
+}
+
+.right-side-panel {
+    height: 100vh;
+    width: 300px;
+    background-color: rgb(78, 29, 29);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tab-button {
+    margin-top: 50px;
+    border-radius: 11px;
+    border-color: #863737;
+    border-width: 0.5px;
+    background: linear-gradient(315deg, #a34343, #c24f4f);
+    box-shadow: -1px -1px 2px #863737,
+        1px 1px 2px #e45d5d;
+    height: 50px;
+    width: 150px;
+}
+
+.x-close {
+    width: 20px;
+}

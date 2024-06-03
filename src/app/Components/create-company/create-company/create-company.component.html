@@ -1,0 +1,55 @@
+<div class="form-container">
+  <p style="cursor: pointer;" routerLink="/home">Back to main</p>
+    <h5 class="form-title">Create Company</h5>
+
+    <div *ngIf="loading">
+      <p>Loading...</p>
+    </div>
+    <div *ngIf="!loading">
+ 
+      <form [formGroup]="createCompanyForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
+
+        <div class="form-group">
+          <label for="companyName">Company Name</label>
+          <input id="companyName" type="text" placeholder="companyName" class="form-control" formControlName="companyName"
+            [class.invalid]="createCompanyForm.get('companyName')?.hasError('required') && createCompanyForm.get('companyName')?.touched"
+            [class.valid]="createCompanyForm.get('companyName')?.valid">
+          <div *ngIf="createCompanyForm.get('companyName')?.hasError('required') && createCompanyForm.get('companyName')?.touched" class="form-error">
+            Company name is required
+          </div>
+          <div *ngIf="createCompanyForm.get('companyName')?.hasError('minlength') && createCompanyForm.get('companyName')?.touched" class="form-error">
+            Min Lenght of 4 is required
+          </div>
+
+        </div>
+        <div class="form-group">
+            <label for="companyCeo">Company Headquaters</label>
+            <input id="companyHeadquaters" type="text" placeholder="companyHeadquaters" class="form-control" formControlName="companyHeadquaters"
+              [class.invalid]="createCompanyForm.get('companyHeadquaters')?.hasError('required') && createCompanyForm.get('companyHeadquaters')?.touched"
+              [class.valid]="createCompanyForm.get('companyHeadquaters')?.valid">
+            <div *ngIf="createCompanyForm.get('companyHeadquaters')?.hasError('required') && createCompanyForm.get('companyHeadquaters')?.touched" class="form-error">
+                Company Headquaters is required
+            </div>
+            <div *ngIf="createCompanyForm.get('companyHeadquaters')?.hasError('minlength') && createCompanyForm.get('companyHeadquaters')?.touched" class="form-error">
+                Min Lenght of 4 is required
+              </div>
+        </div>
+        <div class="form-group">
+            <label for="companyCeo">company Ceo</label>
+            <input id="companyCeo" type="text" placeholder="companyCeo" class="form-control" formControlName="companyCeo"
+              [class.invalid]="createCompanyForm.get('companyCeo')?.hasError('required') && createCompanyForm.get('companyCeo')?.touched"
+              [class.valid]="createCompanyForm.get('companyCeo')?.valid">
+            <div *ngIf="createCompanyForm.get('companyCeo')?.hasError('required') && createCompanyForm.get('companyCeo')?.touched" class="form-error">
+                Company Ceo is required
+            </div>
+            <div *ngIf="createCompanyForm.get('companyCeo')?.hasError('minlength') && createCompanyForm.get('companyCeo')?.touched" class="form-error">
+                Min Lenght of 4 is required
+              </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="createCompanyForm.invalid">Submit</button>
+        <div *ngIf="errors" class="form-error">
+          {{errors}}
+        </div>
+      </form>
+    </div>
+  </div>

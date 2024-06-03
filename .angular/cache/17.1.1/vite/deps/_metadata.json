@@ -1,0 +1,91 @@
+{
+  "hash": "979a3fc1",
+  "configHash": "bfb874b9",
+  "lockfileHash": "e46deaff",
+  "browserHash": "771d4fb4",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "6686b25a",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "2c0d216b",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "5024aff6",
+      "needsInterop": false
+    },
+    "@angular/material/dialog": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/dialog.mjs",
+      "file": "@angular_material_dialog.js",
+      "fileHash": "846bc685",
+      "needsInterop": false
+    },
+    "@angular/material/select": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/select.mjs",
+      "file": "@angular_material_select.js",
+      "fileHash": "205faec3",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "bab2b5aa",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/animations.mjs",
+      "file": "@angular_platform-browser_animations.js",
+      "fileHash": "e53813e2",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "654dee20",
+      "needsInterop": false
+    },
+    "ngx-indexed-db": {
+      "src": "../../../../../node_modules/ngx-indexed-db/fesm2020/ngx-indexed-db.mjs",
+      "file": "ngx-indexed-db.js",
+      "fileHash": "def270d2",
+      "needsInterop": false
+    },
+    "rxjs": {
+      "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
+      "file": "rxjs.js",
+      "fileHash": "d244c8c5",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-S35S6BCO": {
+      "file": "chunk-S35S6BCO.js"
+    },
+    "chunk-KQI3RUNA": {
+      "file": "chunk-KQI3RUNA.js"
+    },
+    "chunk-LCGLCZZH": {
+      "file": "chunk-LCGLCZZH.js"
+    },
+    "chunk-SLIV65SQ": {
+      "file": "chunk-SLIV65SQ.js"
+    },
+    "chunk-KSSMJRQ3": {
+      "file": "chunk-KSSMJRQ3.js"
+    },
+    "chunk-QGEYYCNG": {
+      "file": "chunk-QGEYYCNG.js"
+    },
+    "chunk-SXIXOCJ4": {
+      "file": "chunk-SXIXOCJ4.js"
+    }
+  }
+}

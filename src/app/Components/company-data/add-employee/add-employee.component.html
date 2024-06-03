@@ -1,0 +1,66 @@
+<div class="dialog">
+    <h1 mat-dialog-title>Add New Employee</h1>
+    <div mat-dialog-content>
+       <div class="form-container">
+            <h5 class="form-title">Add New Employee</h5>
+            <div *ngIf="loading">
+              <p>Loading...</p>
+            </div>
+            <div *ngIf="!loading">
+              <form [formGroup]="createEmployeeForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
+        
+                <div class="form-group">
+                  <input id="employeeName" type="text" placeholder="EmployeeName" class="form-control" formControlName="employeeName"
+                    [class.invalid]="createEmployeeForm.get('employeeName')?.hasError('required') && createEmployeeForm.get('employeeName')?.touched"
+                    [class.valid]="createEmployeeForm.get('employeeName')?.valid">
+                  <div *ngIf="createEmployeeForm.get('employeeName')?.hasError('required') && createEmployeeForm.get('employeeName')?.touched" class="form-error">
+                    Employee Name name is required
+                  </div>
+                  <div *ngIf="createEmployeeForm.get('employeeName')?.hasError('minlength') && createEmployeeForm.get('employeeName')?.touched" class="form-error">
+                    Min Lenght of 8 is required
+                   
+                  </div>
+        
+                </div>
+                <div class="form-group">
+                    <select id="dropdown" formControlName="employeeRoles" id="employeeRoles">
+                            <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+                      </select>
+                      <div class="form-error">
+                        Please select your role in the company
+                    </div>
+                </div>
+                <div class="form-group">
+                  <div *ngIf="departments">
+                    <select id="employeeDepartment" formControlName="employeeDepartment">
+                      <option *ngFor="let department of departments" [value]="department.departmentName">
+                        {{ department.departmentName }}
+                      </option>
+                    </select>
+                    <div class="form-error">
+                      Please select your department
+                    </div>
+                  </div>
+                    <!-- <input id="employeeDepartment" type="text" placeholder="employeeDepartment" class="form-control" formControlName="employeeDepartment"
+                      [class.invalid]="createEmployeeForm.get('employeeDepartment')?.hasError('required') && createEmployeeForm.get('employeeDepartment')?.touched"
+                      [class.valid]="createEmployeeForm.get('employeeDepartment')?.valid">
+                    <div *ngIf="createEmployeeForm.get('employeeDepartment')?.hasError('required') && createEmployeeForm.get('employeeDepartment')?.touched" class="form-error">
+                        Employee Department is required
+                    </div>
+                    <div *ngIf="createEmployeeForm.get('employeeDepartment')?.hasError('minlength') && createEmployeeForm.get('employeeDepartment')?.touched" class="form-error">
+                        Min Lenght of 4 is required
+                      </div> -->
+                </div>
+                <div style="display: flex; justify-content:space-between;">
+                <button class="btn btn-primary" type="submit" [disabled]="createEmployeeForm.invalid">Save</button>
+                <button class="btn btn-primary" (click)="CloseDialog()">Cancel</button>
+                </div>
+                <div *ngIf="errors" class="form-error">
+                  {{errors}}
+                </div>
+              </form>
+            </div>
+          </div>
+
+    </div>
+</div>

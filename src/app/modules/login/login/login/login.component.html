@@ -1,0 +1,40 @@
+<div class="form-container">
+  <button class="btn btn-primary" style="margin-right: auto;" routerLink="/signup">Go to SignUp</button>
+    <h5 class="form-title">Login</h5>
+    <div *ngIf="loading">
+      <p>Loading...</p>
+    </div>
+    <div *ngIf="!loading">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" type="text" placeholder="Email Address" class="form-control" formControlName="email"
+            [class.invalid]="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched"
+            [class.valid]="loginForm.get('email')?.valid">
+          <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched" class="form-error">
+            Email Address is required.
+          </div>
+          <div *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched" class="form-error">
+            Please enter a valid email address.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Password" class="form-control" formControlName="password"
+            [class.invalid]="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched"
+            [class.valid]="loginForm.get('password')?.valid">
+          <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" class="form-error">
+            Password is required.
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Submit</button>
+        <div *ngIf="errors" class="form-error">
+          {{errors}}
+        </div>
+        <div *ngIf="userNotValid" class="form-error">
+          This user is not valid
+        </div>
+      </form>
+    </div>
+  </div>

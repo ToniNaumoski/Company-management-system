@@ -1,0 +1,82 @@
+{
+    "companies": [
+        {
+            "id": 1,
+            "companyName": "XYZ Corporation",
+            "headquarters": "1234 Business Ave, Metropolis, XY",
+            "ceo": "Jane Austin",
+            "departments": [
+                {
+                    "departmentName": "IT",
+                    "head": "Sarah Connor",
+                    "employees": [
+                        {
+                            "employeeId": "E001",
+                            "name": "John Doe"
+                        },
+                        {
+                            "employeeId": "E004",
+                            "name": "Michael Reyes"
+                        }
+                    ]
+                },
+                {
+                    "departmentName": "Marketing",
+                    "head": "Robert Frost",
+                    "employees": [
+                        {
+                            "employeeId": "E002",
+                            "name": "Jane Smith"
+                        }
+                    ]
+                },
+                {
+                    "departmentName": "Human Resources",
+                    "head": "Emma Brown",
+                    "employees": [
+                        {
+                            "employeeId": "E003",
+                            "name": "Alice Johnson"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "companyName": "ABC Inc.",
+            "headquarters": "5678 Main St, Smalltown, AB",
+            "ceo": "David Johnson",
+            "departments": [
+                {
+                    "departmentName": "Finance",
+                    "head": "Susan Williams",
+                    "employees": [
+                        {
+                            "employeeId": "E005",
+                            "name": "Robert Davis"
+                        },
+                        {
+                            "employeeId": "E006",
+                            "name": "Emily Turner"
+                        }
+                    ]
+                },
+                {
+                    "departmentName": "Sales",
+                    "head": "James Smith",
+                    "employees": [
+                        {
+                            "employeeId": "E007",
+                            "name": "Linda Brown"
+                        },
+                        {
+                            "employeeId": "E008",
+                            "name": "William Lee"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
